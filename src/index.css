@@ -622,15 +622,35 @@ a {
     position: fixed;
     top: 0;
     right: -100%;
-    width: 280px;
+    width: 300px;
     height: 100vh;
-    background: var(--color-white);
+    background: linear-gradient(180deg, var(--color-white) 0%, #f8fafc 100%);
     flex-direction: column;
-    padding: 6rem 2rem 2rem;
-    gap: 0.5rem;
-    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
-    transition: right 0.3s ease;
+    padding: 0;
+    gap: 0;
+    box-shadow: -20px 0 60px rgba(0, 0, 0, 0.15);
+    transition: right 0.4s cubic-bezier(0.23, 1, 0.32, 1);
     z-index: 999;
+    overflow-y: auto;
+  }
+
+  .nav-links::before {
+    content: '';
+    display: block;
+    padding: 5rem 2rem 1.5rem;
+    background: var(--gradient-primary);
+    margin-bottom: 1rem;
+  }
+
+  .nav-links::after {
+    content: 'HopeRise';
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: white;
   }
 
   .nav-links.active {
@@ -638,18 +658,33 @@ a {
   }
 
   .nav-link {
-    width: 100%;
+    width: calc(100% - 2rem);
+    margin: 0 1rem;
     padding: 1rem 1.5rem;
     border-radius: var(--radius-md);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-dark);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+  }
+
+  .nav-link:hover {
+    background: var(--color-primary-soft);
+    color: var(--color-primary);
+    transform: translateX(5px);
   }
 
   .nav-cta {
-    width: 100%;
-    margin-top: 1rem;
+    width: calc(100% - 2rem);
+    margin: 1.5rem 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
   }
 
   .nav-cta .btn {
     width: 100%;
+    justify-content: center;
   }
 }
 
@@ -2152,5 +2187,164 @@ a {
 
   .impact-card-3d {
     padding: 2rem 1.5rem;
+  }
+}
+
+/* =========================================
+   MOBILE RESPONSIVE - FORM & FOOTER
+   ========================================= */
+
+@media (max-width: 768px) {
+
+  /* Contact Form Mobile */
+  .contact-content {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+
+  .contact-form {
+    padding: 1.5rem !important;
+  }
+
+  .contact-form .grid-2 {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+
+  .form-input,
+  .form-textarea {
+    padding: 1rem !important;
+    font-size: 16px !important;
+    /* Prevents iOS zoom */
+  }
+
+  .contact-item {
+    padding: 1rem !important;
+  }
+
+  .contact-icon {
+    width: 40px !important;
+    height: 40px !important;
+    font-size: 1.25rem !important;
+  }
+
+  /* Footer Mobile */
+  .footer-content {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+    text-align: center;
+  }
+
+  .footer-brand {
+    max-width: 100% !important;
+    margin-bottom: 1rem;
+  }
+
+  .footer-logo {
+    justify-content: center;
+  }
+
+  .footer-social {
+    justify-content: center;
+  }
+
+  .footer-column {
+    padding-left: 0 !important;
+  }
+
+  .footer-column h4 {
+    text-align: center;
+  }
+
+  .footer-column h4::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .footer-links {
+    align-items: center;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .footer-legal {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  /* General Mobile Adjustments */
+  .section {
+    padding: 4rem 0;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  h1 {
+    font-size: 2rem !important;
+  }
+
+  h2 {
+    font-size: 1.75rem !important;
+  }
+
+  .badge {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .btn {
+    padding: 0.875rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  /* Card adjustments for mobile */
+  .card-premium {
+    padding: 1.5rem;
+  }
+
+  .card-premium:hover {
+    transform: none;
+    /* Disable 3D on touch devices */
+  }
+
+  /* Team grid mobile */
+  .team-grid,
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1rem !important;
+  }
+
+  .team-card {
+    padding: 1rem;
+  }
+
+  .team-avatar {
+    width: 80px;
+    height: 80px;
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .team-grid,
+  .grid-4 {
+    grid-template-columns: 1fr !important;
+  }
+
+  .hero-stats {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .hero-stat-divider {
+    display: none;
   }
 }
