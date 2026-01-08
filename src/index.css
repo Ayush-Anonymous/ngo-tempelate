@@ -459,8 +459,80 @@ a {
 
 @media (max-width: 968px) {
   .nav-links {
-    display: none;
-    /* Mobile menu needed */
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background: var(--color-white);
+    flex-direction: column;
+    padding: 6rem 2rem 2rem;
+    gap: 0.5rem;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+    transition: right 0.3s ease;
+    z-index: 999;
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  .nav-link {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    border-radius: var(--radius-md);
+  }
+
+  .nav-cta {
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .nav-cta .btn {
+    width: 100%;
+  }
+}
+
+/* Mobile Menu Button */
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 1001;
+}
+
+.hamburger {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--color-dark);
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 2px;
+  background: var(--color-dark);
+  transition: all 0.3s ease;
+}
+
+.hamburger::before {
+  top: -8px;
+}
+
+.hamburger::after {
+  top: 8px;
+}
+
+@media (max-width: 968px) {
+  .mobile-menu-btn {
+    display: block;
   }
 }
 
@@ -497,7 +569,33 @@ a {
   position: relative;
   z-index: 2;
   max-width: 600px;
-  padding-top: 2rem;
+  padding: 2rem;
+}
+
+.hero-text {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 2.5rem;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+}
+
+.hero-title {
+  margin-bottom: 1.5rem;
+}
+
+.hero-description {
+  color: var(--color-text);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .hero-stats-new {
@@ -512,10 +610,69 @@ a {
   margin-top: 2rem;
 }
 
+/* Hero Responsive */
 @media (max-width: 968px) {
+  .hero {
+    padding-top: 100px;
+    min-height: auto;
+    padding-bottom: 3rem;
+  }
+
+  .hero-bg {
+    width: 100%;
+    height: 50%;
+    top: auto;
+    bottom: 0;
+    mask-image: linear-gradient(to bottom, transparent, black 30%);
+    -webkit-mask-image: linear-gradient(to bottom, transparent, black 30%);
+  }
+
+  .hero-content {
+    max-width: 100%;
+    padding: 1rem;
+  }
+
+  .hero-text {
+    padding: 1.5rem;
+  }
+
   .hero-stats-new {
     width: 100%;
     justify-content: center;
+    padding: 1rem 1.5rem;
+    gap: 1.5rem;
+  }
+
+  .hero-cta {
+    flex-direction: column;
+  }
+
+  .hero-cta .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Section Responsive */
+@media (max-width: 768px) {
+  .section {
+    padding: 4rem 0;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  .section-header {
+    margin-bottom: 2rem;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+  }
+
+  .section-description {
+    font-size: 1rem;
   }
 }
 
