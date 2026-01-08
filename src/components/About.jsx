@@ -11,7 +11,7 @@ function About() {
             <div className="container">
                 <div className="about-content grid-2 align-items-center">
                     <div className="about-image-wrapper animate-slideInLeft">
-                        <img src="/images/about.png" alt="Volunteer teaching child" className="about-image" />
+                        <img src="/images/about.png" alt="Volunteer teaching child" className="about-image" loading="lazy" />
                         <div className="about-experience glass-dark" style={{ position: 'absolute', bottom: '2rem', right: '2rem', padding: '1.5rem', borderRadius: '16px', color: 'white' }}>
                             <div className="about-experience-number text-gradient-accent" style={{ fontSize: '2.5rem', fontWeight: '800' }}>14+</div>
                             <div className="about-experience-text" style={{ fontSize: '0.9rem', opacity: '0.9' }}>Years of Impact</div>

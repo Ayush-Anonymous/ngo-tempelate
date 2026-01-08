@@ -36,7 +36,7 @@ function Programs() {
                     {programs.map((program, index) => (
                         <div className="card-premium" key={index}>
                             <div className="program-image-wrapper" style={{ overflow: 'hidden', borderRadius: '12px', marginBottom: '1.5rem' }}>
-                                <img src={program.image} alt={program.title} className="program-image" style={{ width: '100%', height: '240px', objectFit: 'cover', transition: 'transform 0.5s ease' }} />
+                                <img src={program.image} alt={program.title} className="program-image" loading="lazy" style={{ width: '100%', height: '240px', objectFit: 'cover', transition: 'transform 0.5s ease' }} />
                             </div>
                             <div className="program-content">
                                 <span className="program-category text-sm font-bold text-primary mb-2 display-block" style={{ color: 'var(--color-primary-light)', textTransform: 'uppercase', letterSpacing: '0.05em', fontSize: '0.8rem', fontWeight: '700', marginBottom: '0.5rem', display: 'block' }}>{program.category}</span>
