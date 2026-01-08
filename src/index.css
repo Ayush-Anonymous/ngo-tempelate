@@ -61,6 +61,24 @@
   --space-xl: 3rem;
   --space-2xl: 4rem;
   --space-3xl: 6rem;
+
+  /* Gray Scale */
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
+  --color-gray-950: #030712;
+
+  /* Backgrounds */
+  --bg-primary: var(--color-white);
+  --bg-secondary: var(--color-gray-50);
+  --bg-accent: var(--color-primary-soft);
 }
 
 /* =========================================
@@ -494,6 +512,23 @@ a {
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-xl);
   border: 1px solid rgba(255, 255, 255, 0.5);
+  z-index: 10;
+}
+
+@media (max-width: 968px) {
+  .hero-stats-new {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    margin-top: 2rem;
+    width: 100%;
+    justify-content: center;
+    background: white;
+  }
+
+  .hero-content {
+    padding-bottom: 2rem;
+  }
 }
 
 /* =========================================
