@@ -248,6 +248,160 @@ a {
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+/* =========================================
+   3D EFFECTS & ANIMATIONS
+   ========================================= */
+
+/* 3D Card Tilt Effect */
+.card-3d {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.card-3d:hover {
+  transform: perspective(1000px) rotateX(-5deg) rotateY(5deg) translateZ(20px);
+}
+
+/* 3D Button Effect */
+.btn-3d {
+  transform-style: preserve-3d;
+  transform: perspective(500px) translateZ(0);
+  transition: all 0.3s ease;
+}
+
+.btn-3d:hover {
+  transform: perspective(500px) translateZ(20px) scale(1.05);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.btn-3d:active {
+  transform: perspective(500px) translateZ(0) scale(0.98);
+}
+
+/* 3D Float Animation */
+@keyframes float3d {
+
+  0%,
+  100% {
+    transform: perspective(1000px) translateY(0) rotateX(0) rotateY(0);
+  }
+
+  25% {
+    transform: perspective(1000px) translateY(-10px) rotateX(2deg) rotateY(-2deg);
+  }
+
+  50% {
+    transform: perspective(1000px) translateY(-15px) rotateX(0) rotateY(2deg);
+  }
+
+  75% {
+    transform: perspective(1000px) translateY(-10px) rotateX(-2deg) rotateY(0);
+  }
+}
+
+.float-3d {
+  animation: float3d 6s ease-in-out infinite;
+}
+
+/* 3D Rotate Animation */
+@keyframes rotate3d {
+  0% {
+    transform: perspective(1000px) rotateY(0deg);
+  }
+
+  100% {
+    transform: perspective(1000px) rotateY(360deg);
+  }
+}
+
+.rotate-3d {
+  animation: rotate3d 20s linear infinite;
+}
+
+/* 3D Pulse Effect */
+@keyframes pulse3d {
+
+  0%,
+  100% {
+    transform: perspective(500px) scale(1) translateZ(0);
+    box-shadow: 0 0 0 0 rgba(45, 125, 70, 0.4);
+  }
+
+  50% {
+    transform: perspective(500px) scale(1.02) translateZ(10px);
+    box-shadow: 0 0 30px 10px rgba(45, 125, 70, 0.2);
+  }
+}
+
+.pulse-3d {
+  animation: pulse3d 3s ease-in-out infinite;
+}
+
+/* 3D Entrance Animation */
+@keyframes slideIn3d {
+  from {
+    opacity: 0;
+    transform: perspective(1000px) translateZ(-100px) rotateX(10deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: perspective(1000px) translateZ(0) rotateX(0);
+  }
+}
+
+.animate-3d-in {
+  animation: slideIn3d 0.8s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+/* 3D Hover Lift */
+.hover-3d {
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  transform-style: preserve-3d;
+}
+
+.hover-3d:hover {
+  transform: perspective(1000px) translateY(-15px) rotateX(5deg) scale(1.02);
+  box-shadow:
+    0 30px 60px -20px rgba(0, 0, 0, 0.3),
+    0 0 40px rgba(45, 125, 70, 0.1);
+}
+
+/* 3D Image Tilt */
+.img-3d {
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  transform-style: preserve-3d;
+}
+
+.img-3d:hover {
+  transform: perspective(1000px) rotateY(-10deg) rotateX(5deg) scale(1.05);
+}
+
+/* Parallax 3D Layers */
+.parallax-3d {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.parallax-layer-1 {
+  transform: translateZ(50px) scale(0.95);
+}
+
+.parallax-layer-2 {
+  transform: translateZ(100px) scale(0.9);
+}
+
+/* 3D Text Shadow */
+.text-3d {
+  text-shadow:
+    1px 1px 0 rgba(0, 0, 0, 0.1),
+    2px 2px 0 rgba(0, 0, 0, 0.08),
+    3px 3px 0 rgba(0, 0, 0, 0.06),
+    4px 4px 0 rgba(0, 0, 0, 0.04),
+    5px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
 .section {
   padding: 8rem 0;
   position: relative;
@@ -278,34 +432,37 @@ a {
   background: var(--gradient-primary);
   color: var(--color-white);
   box-shadow: 0 10px 20px -5px rgba(45, 125, 70, 0.4);
+  transform-style: preserve-3d;
 }
 
 .btn-primary:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 15px 30px -5px rgba(45, 125, 70, 0.5);
+  transform: perspective(500px) translateY(-5px) translateZ(10px) scale(1.02);
+  box-shadow: 0 20px 40px -10px rgba(45, 125, 70, 0.5);
 }
 
 .btn-secondary {
   background: var(--color-white);
   color: var(--color-primary);
   border: 2px solid rgba(45, 125, 70, 0.1);
+  transform-style: preserve-3d;
 }
 
 .btn-secondary:hover {
   border-color: var(--color-primary);
   background: var(--color-primary-soft);
-  transform: translateY(-3px);
+  transform: perspective(500px) translateY(-5px) translateZ(10px) scale(1.02);
 }
 
 .btn-accent {
   background: var(--gradient-accent);
   color: var(--color-dark);
   box-shadow: 0 10px 20px -5px rgba(255, 159, 28, 0.4);
+  transform-style: preserve-3d;
 }
 
 .btn-accent:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 15px 30px -5px rgba(255, 159, 28, 0.5);
+  transform: perspective(500px) translateY(-5px) translateZ(10px) scale(1.02);
+  box-shadow: 0 20px 40px -10px rgba(255, 159, 28, 0.5);
 }
 
 /* Cards */
@@ -314,10 +471,11 @@ a {
   border-radius: var(--radius-lg);
   padding: 2.5rem;
   position: relative;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
   border: 1px solid rgba(0, 0, 0, 0.03);
   overflow: hidden;
   color: var(--color-text);
+  transform-style: preserve-3d;
 }
 
 .card-premium::before {
@@ -334,8 +492,10 @@ a {
 }
 
 .card-premium:hover {
-  transform: translateY(-10px);
-  box-shadow: var(--shadow-xl);
+  transform: perspective(1000px) translateY(-15px) rotateX(3deg) scale(1.02);
+  box-shadow:
+    0 40px 80px -20px rgba(0, 0, 0, 0.15),
+    0 0 40px rgba(45, 125, 70, 0.08);
 }
 
 .card-premium:hover::before {
@@ -1805,4 +1965,192 @@ a {
   max-width: 500px;
   margin: var(--space-xs) auto 0;
   line-height: 1.6;
+}
+
+/* =========================================
+   IMPACT SECTION - REDESIGNED WITH 3D
+   ========================================= */
+
+.impact-section {
+  background: linear-gradient(135deg, var(--color-dark) 0%, #0a1628 50%, var(--color-dark-soft) 100%);
+  padding: 8rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.impact-bg-shapes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.impact-bg-shapes .shape {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.1;
+}
+
+.impact-bg-shapes .shape-1 {
+  width: 600px;
+  height: 600px;
+  background: var(--color-primary);
+  top: -200px;
+  right: -200px;
+  animation: float3d 15s ease-in-out infinite;
+}
+
+.impact-bg-shapes .shape-2 {
+  width: 400px;
+  height: 400px;
+  background: var(--color-accent);
+  bottom: -100px;
+  left: -100px;
+  animation: float3d 12s ease-in-out infinite reverse;
+}
+
+.impact-bg-shapes .shape-3 {
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: pulse3d 8s ease-in-out infinite;
+}
+
+.impact-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 4rem;
+  position: relative;
+  z-index: 2;
+}
+
+.badge-light {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--color-white);
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.impact-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--color-white);
+  margin-bottom: 1.5rem;
+}
+
+.impact-subtitle {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.125rem;
+  line-height: 1.8;
+}
+
+.impact-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.impact-card-3d {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-xl);
+  padding: 2.5rem 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  cursor: pointer;
+}
+
+.impact-card-3d:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.impact-card-inner {
+  position: relative;
+  z-index: 2;
+}
+
+.impact-card-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.impact-card-number {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--color-white), var(--color-accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.impact-card-label {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.impact-card-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 150%;
+  height: 150%;
+  background: radial-gradient(circle, var(--color-primary) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.impact-card-3d:hover .impact-card-glow {
+  opacity: 0.15;
+}
+
+.impact-cta {
+  text-align: center;
+  margin-top: 4rem;
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 1024px) {
+  .impact-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .impact-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .impact-card-3d {
+    padding: 2rem 1.5rem;
+  }
 }
