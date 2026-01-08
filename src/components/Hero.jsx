@@ -33,21 +33,20 @@ function Hero() {
                                 Our Programs
                             </button>
                         </div>
-                    </div>
 
-                    <div className="hero-stats-new float-delay">
-                        <div className="stat-item text-center">
-                            <h3 className="text-gradient" style={{ fontSize: '2.5rem', marginBottom: '0.5rem' }}>50K+</h3>
-                            <p className="text-sm font-medium text-gray-500 mb-0">Lives Changed</p>
-                        </div>
-                        <div className="status-divider" style={{ width: '1px', background: 'rgba(0,0,0,0.1)' }}></div>
-                        <div className="stat-item text-center">
-                            <h3 className="text-gradient-accent" style={{ fontSize: '2.5rem', marginBottom: '0.5rem' }}>120+</h3>
-                            <p className="text-sm font-medium text-gray-500 mb-0">Active Projects</p>
+                        <div className="hero-stats-new animate-slide-up" style={{ animationDelay: '0.3s' }}>
+                            <div className="stat-item text-center">
+                                <h3 className="text-gradient" style={{ fontSize: '2.5rem', marginBottom: '0.5rem' }}>50K+</h3>
+                                <p style={{ color: '#6b7280', fontSize: '0.875rem', fontWeight: '500', marginBottom: '0' }}>Lives Changed</p>
+                            </div>
+                            <div style={{ width: '1px', background: 'rgba(0,0,0,0.1)' }}></div>
+                            <div className="stat-item text-center">
+                                <h3 className="text-gradient-accent" style={{ fontSize: '2.5rem', marginBottom: '0.5rem' }}>120+</h3>
+                                <p style={{ color: '#6b7280', fontSize: '0.875rem', fontWeight: '500', marginBottom: '0' }}>Active Projects</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
         </section>
     )
 }

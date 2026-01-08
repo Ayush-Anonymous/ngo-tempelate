@@ -501,33 +501,21 @@ a {
 }
 
 .hero-stats-new {
-  position: absolute;
-  bottom: 2rem;
-  left: 2rem;
-  display: flex;
+  display: inline-flex;
   gap: 2rem;
   padding: 1.5rem 2.5rem;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(20px);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-xl);
   border: 1px solid rgba(255, 255, 255, 0.5);
-  z-index: 10;
+  margin-top: 2rem;
 }
 
 @media (max-width: 968px) {
   .hero-stats-new {
-    position: relative;
-    bottom: auto;
-    left: auto;
-    margin-top: 2rem;
     width: 100%;
     justify-content: center;
-    background: white;
-  }
-
-  .hero-content {
-    padding-bottom: 2rem;
   }
 }
 
