@@ -8,23 +8,24 @@ function Hero() {
 
     return (
         <section className="hero" id="hero">
+            <div className="hero-bg"></div>
             <div className="container">
                 <div className="hero-content">
                     <div className="hero-text">
-                        <div className="hero-badge">
-                            <span className="hero-badge-dot"></span>
+                        <div className="badge">
+                            <span className="badge-dot"></span>
                             Making a Difference Since 2010
                         </div>
-                        <h1 className="hero-title">
+                        <h1 className="hero-title animate-slide-up">
                             Empowering Communities,<br />
-                            <span>Transforming Lives</span>
+                            <span className="text-gradient">Transforming Lives</span>
                         </h1>
-                        <p className="hero-description">
+                        <p className="hero-description animate-slide-up" style={{ animationDelay: '0.1s' }}>
                             We are dedicated to creating sustainable change in underserved communities
                             through education, healthcare, and economic empowerment programs that
                             uplift and inspire.
                         </p>
-                        <div className="hero-cta">
+                        <div className="hero-cta animate-slide-up" style={{ animationDelay: '0.2s' }}>
                             <button className="btn btn-primary" onClick={() => scrollToSection('contact')}>
                                 Get Involved →
                             </button>
@@ -34,21 +35,15 @@ function Hero() {
                         </div>
                     </div>
 
-                    <div className="hero-visual">
-                        <div className="hero-image-wrapper">
-                            <div className="hero-image">
-                                🤝
-                            </div>
+                    <div className="hero-stats-new float-delay">
+                        <div className="stat-item text-center">
+                            <h3 className="text-gradient" style={{ fontSize: '2.5rem', marginBottom: '0.5rem' }}>50K+</h3>
+                            <p className="text-sm font-medium text-gray-500 mb-0">Lives Changed</p>
                         </div>
-                        <div className="hero-stats">
-                            <div className="hero-stat">
-                                <div className="hero-stat-number">50K+</div>
-                                <div className="hero-stat-label">Lives Changed</div>
-                            </div>
-                            <div className="hero-stat">
-                                <div className="hero-stat-number">120+</div>
-                                <div className="hero-stat-label">Projects</div>
-                            </div>
+                        <div className="status-divider" style={{ width: '1px', background: 'rgba(0,0,0,0.1)' }}></div>
+                        <div className="stat-item text-center">
+                            <h3 className="text-gradient-accent" style={{ fontSize: '2.5rem', marginBottom: '0.5rem' }}>120+</h3>
+                            <p className="text-sm font-medium text-gray-500 mb-0">Active Projects</p>
                         </div>
                     </div>
                 </div>

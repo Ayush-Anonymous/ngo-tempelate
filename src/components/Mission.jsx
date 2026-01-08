@@ -21,20 +21,20 @@ function Mission() {
         <section className="section mission" id="mission">
             <div className="container">
                 <div className="section-header">
-                    <span className="section-subtitle">Our Mission</span>
-                    <h2 className="section-title">Creating Lasting Change Through Compassion</h2>
+                    <span className="badge">Our Mission</span>
+                    <h2 className="section-title">Creating Lasting Change Through <span className="text-gradient">Compassion</span></h2>
                     <p className="section-description">
                         Our mission is to empower underserved communities by providing access to
                         education, healthcare, and economic opportunities that create sustainable change.
                     </p>
                 </div>
 
-                <div className="values-grid">
+                <div className="grid-3">
                     {values.map((value, index) => (
-                        <div className="value-card" key={index}>
-                            <div className="value-icon">{value.icon}</div>
-                            <h3 className="value-title">{value.title}</h3>
-                            <p className="value-description">{value.description}</p>
+                        <div className="card-premium text-center" key={index} style={{ padding: '3rem 2rem' }}>
+                            <div className="value-icon" style={{ fontSize: '3rem', marginBottom: '1.5rem', background: 'var(--color-primary-soft)', width: '80px', height: '80px', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '50%', margin: '0 auto 1.5rem' }}>{value.icon}</div>
+                            <h3 className="value-title mb-3" style={{ fontSize: '1.5rem' }}>{value.title}</h3>
+                            <p className="value-description text-gray-500">{value.description}</p>
                         </div>
                     ))}
                 </div>

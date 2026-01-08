@@ -20,7 +20,9 @@ function Header({ isScrolled }) {
             <div className="container">
                 <nav className="nav">
                     <a href="#" className="logo" onClick={() => scrollToSection('hero')}>
-                        <span className="logo-icon">🌱</span>
+                        <div className="logo-icon-wrapper">
+                            <span className="logo-icon-text">🌱</span>
+                        </div>
                         <span>HopeRise</span>
                     </a>
 

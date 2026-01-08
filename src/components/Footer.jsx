@@ -35,9 +35,11 @@ function Footer() {
             <div className="container">
                 <div className="footer-content">
                     <div className="footer-brand">
-                        <a href="#" className="footer-logo">
-                            <span className="footer-logo-icon">🌱</span>
-                            <span>HopeRise</span>
+                        <a href="#" className="footer-logo logo">
+                            <div className="logo-icon-wrapper" style={{ width: '40px', height: '40px', fontSize: '1.2rem' }}>
+                                <span className="logo-icon-text">🌱</span>
+                            </div>
+                            <span style={{ color: 'white' }}>HopeRise</span>
                         </a>
                         <p className="footer-description">
                             Empowering communities and transforming lives through sustainable
