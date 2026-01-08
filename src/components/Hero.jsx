@@ -8,24 +8,24 @@ function Hero() {
 
     return (
         <section className="hero" id="hero">
-            <div className="hero-bg"></div>
+            <div className="hero-overlay"></div>
             <div className="container">
-                <div className="hero-content">
-                    <div className="hero-text">
+                <div className="hero-grid">
+                    <div className="hero-content">
                         <div className="badge">
                             <span className="badge-dot"></span>
                             Making a Difference Since 2010
                         </div>
-                        <h1 className="hero-title animate-slide-up">
+                        <h1 className="hero-title">
                             Empowering Communities,<br />
                             <span className="text-gradient">Transforming Lives</span>
                         </h1>
-                        <p className="hero-description animate-slide-up" style={{ animationDelay: '0.1s' }}>
+                        <p className="hero-description">
                             We are dedicated to creating sustainable change in underserved communities
                             through education, healthcare, and economic empowerment programs that
                             uplift and inspire.
                         </p>
-                        <div className="hero-cta animate-slide-up" style={{ animationDelay: '0.2s' }}>
+                        <div className="hero-cta">
                             <button className="btn btn-primary" onClick={() => scrollToSection('contact')}>
                                 Get Involved →
                             </button>
@@ -33,18 +33,29 @@ function Hero() {
                                 Our Programs
                             </button>
                         </div>
-
-                        <div className="hero-stats-new animate-slide-up" style={{ animationDelay: '0.3s' }}>
-                            <div className="stat-item text-center">
-                                <h3 className="text-gradient" style={{ fontSize: '2.5rem', marginBottom: '0.5rem' }}>50K+</h3>
-                                <p style={{ color: '#6b7280', fontSize: '0.875rem', fontWeight: '500', marginBottom: '0' }}>Lives Changed</p>
+                        <div className="hero-stats">
+                            <div className="hero-stat">
+                                <span className="hero-stat-number">50K+</span>
+                                <span className="hero-stat-label">Lives Changed</span>
                             </div>
-                            <div style={{ width: '1px', background: 'rgba(0,0,0,0.1)' }}></div>
-                            <div className="stat-item text-center">
-                                <h3 className="text-gradient-accent" style={{ fontSize: '2.5rem', marginBottom: '0.5rem' }}>120+</h3>
-                                <p style={{ color: '#6b7280', fontSize: '0.875rem', fontWeight: '500', marginBottom: '0' }}>Active Projects</p>
+                            <div className="hero-stat-divider"></div>
+                            <div className="hero-stat">
+                                <span className="hero-stat-number accent">120+</span>
+                                <span className="hero-stat-label">Active Projects</span>
+                            </div>
+                            <div className="hero-stat-divider"></div>
+                            <div className="hero-stat">
+                                <span className="hero-stat-number">18</span>
+                                <span className="hero-stat-label">Countries</span>
                             </div>
                         </div>
+                    </div>
+                    <div className="hero-image-container">
+                        <img
+                            src="/images/hero-bg.png"
+                            alt="Community members working together"
+                            className="hero-image"
+                        />
                     </div>
                 </div>
             </div>
