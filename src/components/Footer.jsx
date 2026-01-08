@@ -33,18 +33,18 @@ function Footer() {
     return (
         <footer className="footer">
             <div className="container">
-                <div className="footer-content">
+                <div className="footer-main">
+                    {/* Brand Column */}
                     <div className="footer-brand">
-                        <a href="#" className="footer-logo logo">
+                        <a href="#" className="footer-logo">
                             <div className="logo-icon-wrapper" style={{ width: '40px', height: '40px', fontSize: '1.2rem' }}>
-                                <span className="logo-icon-text">🌱</span>
+                                <span>🌱</span>
                             </div>
-                            <span style={{ color: 'white' }}>HopeRise</span>
+                            <span>HopeRise</span>
                         </a>
                         <p className="footer-description">
                             Empowering communities and transforming lives through sustainable
-                            development programs. Together, we can create a better tomorrow
-                            for those who need it most.
+                            development programs.
                         </p>
                         <div className="footer-social">
                             <a href="#" className="footer-social-link" aria-label="Facebook">f</a>
@@ -54,57 +54,62 @@ function Footer() {
                         </div>
                     </div>
 
-                    <div className="footer-column">
-                        <h4>Quick Links</h4>
-                        <ul className="footer-links">
-                            {quickLinks.map((link, index) => (
-                                <li key={index}>
-                                    <a
-                                        href={link.href}
-                                        className="footer-link"
-                                        onClick={(e) => scrollToSection(e, link.href)}
-                                    >
-                                        {link.name}
-                                    </a>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
+                    {/* Links Columns */}
+                    <div className="footer-links-wrapper">
+                        <div className="footer-column">
+                            <h4>Quick Links</h4>
+                            <ul className="footer-links">
+                                {quickLinks.map((link, index) => (
+                                    <li key={index}>
+                                        <a
+                                            href={link.href}
+                                            className="footer-link"
+                                            onClick={(e) => scrollToSection(e, link.href)}
+                                        >
+                                            {link.name}
+                                        </a>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
 
-                    <div className="footer-column">
-                        <h4>Our Programs</h4>
-                        <ul className="footer-links">
-                            {programs.map((link, index) => (
-                                <li key={index}>
-                                    <a
-                                        href={link.href}
-                                        className="footer-link"
-                                        onClick={(e) => scrollToSection(e, link.href)}
-                                    >
-                                        {link.name}
-                                    </a>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
+                        <div className="footer-column">
+                            <h4>Programs</h4>
+                            <ul className="footer-links">
+                                {programs.map((link, index) => (
+                                    <li key={index}>
+                                        <a
+                                            href={link.href}
+                                            className="footer-link"
+                                            onClick={(e) => scrollToSection(e, link.href)}
+                                        >
+                                            {link.name}
+                                        </a>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
 
-                    <div className="footer-column">
-                        <h4>Support Us</h4>
-                        <ul className="footer-links">
-                            {support.map((link, index) => (
-                                <li key={index}>
-                                    <a
-                                        href={link.href}
-                                        className="footer-link"
-                                        onClick={(e) => scrollToSection(e, link.href)}
-                                    >
-                                        {link.name}
-                                    </a>
-                                </li>
-                            ))}
-                        </ul>
+                        <div className="footer-column">
+                            <h4>Support</h4>
+                            <ul className="footer-links">
+                                {support.map((link, index) => (
+                                    <li key={index}>
+                                        <a
+                                            href={link.href}
+                                            className="footer-link"
+                                            onClick={(e) => scrollToSection(e, link.href)}
+                                        >
+                                            {link.name}
+                                        </a>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
                     </div>
                 </div>
+
+                <div className="footer-divider"></div>
 
                 <div className="footer-bottom">
                     <p>© {currentYear} HopeRise Foundation. All rights reserved.</p>
@@ -117,10 +122,6 @@ function Footer() {
                 <div className="footer-credit">
                     <p>
                         Template by <a href="https://matchlessgiftz.com" target="_blank" rel="noopener noreferrer" className="credit-link">Matchlessdigital Network</a>
-                    </p>
-                    <p className="license-notice">
-                        © {currentYear} Matchlessdigital Network. This template is proprietary and protected.
-                        Unauthorized use, reproduction, or distribution is strictly prohibited.
                     </p>
                 </div>
             </div>
